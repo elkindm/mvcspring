@@ -14,6 +14,8 @@
 			<th>Apellido</th>
 			<th>Email</th>
 			<th>Telefono</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
 		</tr>
 		<tbody th:if="${clientes !=null and !clientes.empty}">
 			<tr th:each="cliente : ${clientes}">
@@ -21,6 +23,8 @@
 				<td th:text="${cliente.apellido}"></td>
 				<td th:text="${cliente.email}"></td>
 				<td th:text="${cliente.telefono}"></td>
+				<td> <a th:href="@{/editar/}+${cliente.id}" th:text="Editar"></a></td>
+				<td> <a th:href="@{/eliminar/}+${cliente.id}" th:text="Eliminar"></a></td>
 			</tr>
 		</tbody>
 	</table>
