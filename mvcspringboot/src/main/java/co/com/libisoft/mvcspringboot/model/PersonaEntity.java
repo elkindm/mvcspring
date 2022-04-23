@@ -5,6 +5,11 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import lombok.Data;
+/**
+ * 
+ * @author elkin
+ *<h1>entity persona</h1>
+ */
 
 @Data
 @Entity
