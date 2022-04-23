@@ -8,10 +8,33 @@
 	<h1>index html mvc</h1>
 	<p th:text="adios"></p>
 	<p th:text="${saludo}"></p>
-	<br>
-	Nombre: <span th:text="${cliente.nombre}"></span> <br>
-	Nombre: <span th:text="${cliente.apellido}"></span> <br>
-	Nombre: <span th:text="${cliente.email}"></span> <br>
-	Nombre: <span th:text="${cliente.telefono}"></span>
+	<br> Nombre:
+	<span th:text="${cliente.nombre}"></span>
+	<br> Nombre:
+	<span th:text="${cliente.apellido}"></span>
+	<br> Nombre:
+	<span th:text="${cliente.email}"></span>
+	<br> Nombre:
+	<span th:text="${cliente.telefono}"></span>
+
+	<table border="1px">
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Email</th>
+			<th>Telefono</th>
+		</tr>
+		<tbody th:if="${clientes !=null and !clientes.empty}">
+			<tr th:each="cliente : ${clientes}">
+				<td th:text="${cliente.nombre}"></td>
+				<td th:text="${cliente.apellido}"></td>
+				<td th:text="${cliente.email}"></td>
+				<td th:text="${cliente.telefono}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<div th:if="${clientes==null or clientes.empty}">
+		<h2>La lista de clientes está Vacía</h2>
+	</div>
 </body>
 </html>
